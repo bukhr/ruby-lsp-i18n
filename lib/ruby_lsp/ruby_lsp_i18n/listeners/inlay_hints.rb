@@ -6,7 +6,8 @@ module RubyLsp
       extend T::Sig
       include Requests::Support::Common
 
-      def initialize(response_builder, range, hints_configuration, dispatcher)
+      def initialize(i18n_database, response_builder, range, hints_configuration, dispatcher)
+        @i18n_database = i18n_database
         @response_builder = response_builder
         @range = range
         @hints_configuration = hints_configuration
@@ -33,11 +34,16 @@ module RubyLsp
 
         return unless key.is_a?(Prism::StringNode)
 
+        key = key.unescaped
+
+        value, files = @i18n_database.find(key)
+        files_string = files.join("\n")
+
         @response_builder << Interface::InlayHint.new(
           position: { line: node.location.start_line - 1, character: node.location.end_column },
-          label: key.unescaped,
+          label: value,
           padding_left: true,
-          tooltip: "This is a I18n translation key in file: /home/es.yml",
+          tooltip: files_string,
         )
       end
     end
