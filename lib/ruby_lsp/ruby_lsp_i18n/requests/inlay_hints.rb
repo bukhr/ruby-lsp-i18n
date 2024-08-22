@@ -17,7 +17,9 @@ module RubyLsp
         Listeners::InlayHints.new(@response_builder, start_line..end_line, hints_configuration, dispatcher)
 
         Addon.addons.each do |addon|
-          addon.create_inlay_hints_listener(@response_builder, start_line..end_line, hints_configuration, dispatcher)
+          if addon.respond_to?(:create_inlay_hints_listener)
+            addon.create_inlay_hints_listener(@response_builder, start_line..end_line, hints_configuration, dispatcher)
+          end
         end
       end
     end
