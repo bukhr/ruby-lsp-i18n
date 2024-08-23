@@ -6,14 +6,21 @@ module RubyLsp
       attr_reader :data
 
       ROOT_PATH = Pathname.new(".")
-      TRANSLATION_PATH = ROOT_PATH.join("**/config/locales/**/*.yml")
+      TRANSLATION_PATH = ROOT_PATH.join("**/config/locales/**/*es.yml")
 
       def initialize
-        @data = load_translation_data
+        @data = Hash.new do |hash, key|
+          hash[key] = {
+            value: 0,
+            files: [],
+          }
+        end
+
+        load_translation_data
       end
 
-      def find(key, language = "es")
-        datum = @data.dig(language, key)
+      def find(key)
+        datum = @data.dig(key)
         value = datum[:value]
         files = datum[:files]
 
@@ -22,43 +29,77 @@ module RubyLsp
         [value, files]
       end
 
+      def add_keys(file)
+        file = parse_file_uri(file)
+        translations = get_yaml_translations(file)
+
+        return if translations.nil?
+
+        keys = extract_keys(translations)
+        keys.each do |key|
+          translation = translations.dig(*key.split("."))
+          @data[key][:value] = translation
+          @data[key][:files] << file
+        end
+      end
+
+      def remove_keys(file)
+        file = parse_file_uri(file)
+        translations = get_yaml_translations(file)
+        keys = extract_keys(translations)
+        keys.each do |key|
+          @data.delete(key)
+        end
+      end
+
+      def update_keys(file)
+        file = parse_file_uri(file)
+        File.open("log.txt", "a") do |f|
+          f.puts "File updated: #{file}"
+        end
+        remove_keys(file)
+        add_keys(file)
+      end
+
+      def parse_file_uri(file)
+        file.gsub("file://", "")
+      end
+
       private
+
+      def get_yaml_translations(file)
+        begin
+          translations = YAML.load_file(file, aliases: true)
+        rescue Psych::SyntaxError => e
+          return {}
+        end
+        language = "es"
+        translations = translations.dig(language)
+
+        if translations.nil?
+          return {}
+        end
+
+        translations
+      end
 
       def load_translation_data
         translation_files = Dir.glob(TRANSLATION_PATH)
-        all_keys = Hash.new do |hash, key|
-          hash[key] = Hash.new do |h, k|
-            h[k] = {
-              value: nil,
-              files: [],
-            }
-          end
-        end
-
         translation_files.each do |file|
-          next unless file.match?(%r/config\/locales(\/.*)?\/[a-z]{2}(-[a-z]{2})?\.yml$/)
-
-          translations = YAML.load_file(file, aliases: true)
-          language = File.basename(file, ".yml")
-          keys = extract_keys(translations, language)
-          keys.each do |key|
-            full_key = "#{language}.#{key}"
-            translation = translations.dig(*full_key.split("."))
-            all_keys[language][key][:value] = translation
-            all_keys[language][key][:files] << file
-          end
+          add_keys(file)
         end
-        all_keys
       end
 
-      def extract_keys(translations, language, prefix = nil)
+      def extract_keys(translations, prefix = nil)
         keys = []
         translations.each do |key, value|
+          next unless key.is_a?(String)
+
           full_key = prefix ? "#{prefix}.#{key}" : key
           if value.is_a?(Hash)
-            keys.concat(extract_keys(value, language, full_key))
+            keys.concat(extract_keys(value, full_key))
           else
-            keys << full_key.sub(/^#{language}\./, "")
+            keys << full_key
           end
         end
         keys

@@ -1,4 +1,12 @@
 es:
   hello:
-    world: "Hola Mundo"
+    world: "Hola Mkvuoo"
     mundo: "Mundo"
+    alo: "Hello"
+    goodbye: "sdfkjssfdsdsdñvkldsmvlsfdscfdblksdvdvn"
+  a:
+   b: "Hellooo"
+
+  :true: "True"
+  :false: false
+  :nil:   "Nil"
