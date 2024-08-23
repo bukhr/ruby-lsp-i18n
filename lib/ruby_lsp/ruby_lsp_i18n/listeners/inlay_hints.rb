@@ -37,13 +37,22 @@ module RubyLsp
         key = key.unescaped
 
         value, files = @i18n_database.find(key)
-        files_string = files.join("\n")
+
+        tooltip_content = <<~MARKDOWN
+          **Key:** #{value} \n
+          **Files:** #{files.map { |file| "[#{file}](#{Dir.pwd}/#{file})" }.join("\n")}
+        MARKDOWN
+
+        tooltip = Interface::MarkupContent.new(
+          kind: "markdown",
+          value: tooltip_content,
+        )
 
         @response_builder << Interface::InlayHint.new(
           position: { line: node.location.start_line - 1, character: node.location.end_column },
           label: value,
           padding_left: true,
-          tooltip: files_string,
+          tooltip: tooltip,
         )
       end
     end
