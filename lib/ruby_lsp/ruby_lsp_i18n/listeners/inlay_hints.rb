@@ -36,17 +36,31 @@ module RubyLsp
 
         key = key.unescaped
 
-        value, files = @i18n_database.find(key)
+        matches = @i18n_database.find(key)
 
         tooltip_content = <<~MARKDOWN
-          **Key:** #{value} \n
-          **Files:** #{files.map { |file| "[#{file}](#{Dir.pwd}/#{file})" }.join("\n")}
+          **Translations (es)**
+          #{matches.map { |match| "- [#{match[:file]}](#{create_file_uri(match[:file])}): #{match[:value]}" }.join("\n")}
         MARKDOWN
+
+        if matches.empty?
+          tooltip_content += <<~MARKDOWN
+            ⚠️ Translation missing
+          MARKDOWN
+        end
+
+        if matches.size > 1
+          tooltip_content += <<~MARKDOWN
+            \n⚠️ There are more than one translation for this key
+          MARKDOWN
+        end
 
         tooltip = Interface::MarkupContent.new(
           kind: "markdown",
           value: tooltip_content,
         )
+
+        value = matches.first&.dig(:value) || "⚠️ Translation missing"
 
         @response_builder << Interface::InlayHint.new(
           position: { line: node.location.start_line - 1, character: node.location.end_column },
@@ -54,6 +68,13 @@ module RubyLsp
           padding_left: true,
           tooltip: tooltip,
         )
+      end
+
+      private
+
+      # TO DO: Test in Windows and Mac OS
+      def create_file_uri(path)
+        "#{Dir.pwd}/#{path}"
       end
     end
   end

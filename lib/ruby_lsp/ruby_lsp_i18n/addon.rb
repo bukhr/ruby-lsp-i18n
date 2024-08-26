@@ -7,15 +7,13 @@ require_relative "i18n_database"
 
 module RubyLsp
   module RubyLspI18n
+    GLOB_PATH = "**/config/locales/**/*.yml"
     # This class is the entry point for the addon. It is responsible for activating and deactivating the addon
     class Addon < ::RubyLsp::Addon
-      GLOB_PATH = "**/config/locales/**/*.yml"
-      ROOT_PATH = Pathname.new(".")
-      TRANSLATION_PATH = ROOT_PATH.join(GLOB_PATH)
-
       def initialize
         super
         @i18n_database = I18nDatabase.new
+        @i18n_database.start
       end
 
       # Performs any activation that needs to happen once when the language server is booted
@@ -53,7 +51,8 @@ module RubyLsp
           next unless uri
           next unless uri.end_with?("es.yml")
 
-          @i18n_database.update_keys(uri)
+          uri = URI.parse(uri).path.gsub(Dir.pwd + "/", "")
+          @i18n_database.update_file(uri)
         end
       end
 

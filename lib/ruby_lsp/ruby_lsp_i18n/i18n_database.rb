@@ -2,107 +2,88 @@
 
 module RubyLsp
   module RubyLspI18n
+    # The database holds a data structure that maps i18n keys
+    # to their values and the files they are defined in.
     class I18nDatabase
+      LANGUAGE = "es"
       attr_reader :data
 
       ROOT_PATH = Pathname.new(".")
       TRANSLATION_PATH = ROOT_PATH.join("**/config/locales/**/*es.yml")
 
       def initialize
+        @translation_path = TRANSLATION_PATH
         @data = Hash.new do |hash, key|
-          hash[key] = {
-            value: 0,
-            files: [],
-          }
+          hash[key] = []
         end
+      end
 
-        load_translation_data
+      def add(key, value, file)
+        @data[key] << { value: value, file: file }
+      end
+
+      def remove(key, file)
+        @data[key].delete_if { |v| v[:file] == file }
       end
 
       def find(key)
         datum = @data.dig(key)
-        value = datum[:value]
-        files = datum[:files]
-
-        return "i18n: translation missing", [] if files.none?
-
-        [value, files]
+        datum
       end
 
-      def add_keys(file)
-        file = parse_file_uri(file)
-        translations = get_yaml_translations(file)
+      def update(key, value, file)
+        remove(key, file)
+        add(key, value, file)
+      end
 
-        return if translations.nil?
-
-        keys = extract_keys(translations)
-        keys.each do |key|
-          translation = translations.dig(*key.split("."))
-          @data[key][:value] = translation
-          @data[key][:files] << file
+      def load_file(path)
+        begin
+          translations = YAML.load_file(path)
+        rescue Psych::SyntaxError
+          return
         end
+
+        translations = translations.dig(LANGUAGE)
+        return unless translations.is_a?(Hash)
+
+        process_translations(translations, path)
       end
 
-      def remove_keys(file)
-        file = parse_file_uri(file)
-        translations = get_yaml_translations(file)
-        keys = extract_keys(translations)
-        keys.each do |key|
-          @data.delete(key)
+      def update_file(path)
+        begin
+          translations = YAML.load_file(path)
+        rescue Psych::SyntaxError
+          return
         end
+
+        translations = translations.dig(LANGUAGE)
+        return unless translations.is_a?(Hash)
+
+        process_translations(translations, path)
       end
 
-      def update_keys(file)
-        file = parse_file_uri(file)
-        File.open("log.txt", "a") do |f|
-          f.puts "File updated: #{file}"
+      def delete_file(path)
+        @data.delete_if { |_, value| value.any? { |v| v[:file] == path } }
+      end
+
+      def start
+        files = Dir.glob(@translation_path)
+        files.each do |file|
+          load_file(file)
         end
-        remove_keys(file)
-        add_keys(file)
-      end
-
-      def parse_file_uri(file)
-        file.gsub("file://", "")
       end
 
       private
 
-      def get_yaml_translations(file)
-        begin
-          translations = YAML.load_file(file, aliases: true)
-        rescue Psych::SyntaxError => e
-          return {}
-        end
-        language = "es"
-        translations = translations.dig(language)
-
-        if translations.nil?
-          return {}
-        end
-
-        translations
-      end
-
-      def load_translation_data
-        translation_files = Dir.glob(TRANSLATION_PATH)
-        translation_files.each do |file|
-          add_keys(file)
-        end
-      end
-
-      def extract_keys(translations, prefix = nil)
-        keys = []
+      def process_translations(translations, file, prefix = nil)
         translations.each do |key, value|
-          next unless key.is_a?(String)
-
           full_key = prefix ? "#{prefix}.#{key}" : key
           if value.is_a?(Hash)
-            keys.concat(extract_keys(value, full_key))
+            process_translations(value, file, full_key)
           else
-            keys << full_key
+            update(full_key, value, file)
           end
         end
-        keys
       end
     end
   end
