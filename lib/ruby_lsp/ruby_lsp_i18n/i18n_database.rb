@@ -12,14 +12,20 @@ module RubyLsp
         @data = Hash.new do |hash, key|
           hash[key] = []
         end
+
+        @file_keys = Hash.new do |hash, key|
+          hash[key] = []
+        end
       end
 
       def add(key, value, file)
         @data[key] << { value: value, file: file }
+        @file_keys[file] << key
       end
 
       def remove(key, file)
         @data[key].delete_if { |v| v[:file] == file }
+        @file_keys[file].delete(key)
       end
 
       def find(key)
@@ -71,7 +77,7 @@ module RubyLsp
       private
 
       def get_keys_from_file(file)
-        data.select { |_, value| value.any? { |v| v[:file] == file } }.keys
+        @file_keys[file]
       end
 
       def process_translations(translations, file, prefix = nil)
