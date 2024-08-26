@@ -5,14 +5,10 @@ module RubyLsp
     # The database holds a data structure that maps i18n keys
     # to their values and the files they are defined in.
     class I18nDatabase
-      LANGUAGE = "es"
       attr_reader :data
 
-      ROOT_PATH = Pathname.new(".")
-      TRANSLATION_PATH = ROOT_PATH.join("**/config/locales/**/*es.yml")
-
-      def initialize
-        @translation_path = TRANSLATION_PATH
+      def initialize(language:)
+        @language = language
         @data = Hash.new do |hash, key|
           hash[key] = []
         end
@@ -36,44 +32,47 @@ module RubyLsp
         add(key, value, file)
       end
 
-      def load_file(path)
+      def sync_file(path)
+        # Clean entries from the file
+        current_keys = get_keys_from_file(path)
+        current_keys.each do |key|
+          remove(key, path)
+        end
+
+        return unless File.exist?(path)
+
+        # Load translations only if the current yaml is valid
         begin
-          translations = YAML.load_file(path)
+          translations = YAML.load_file(path, aliases: true)
         rescue Psych::SyntaxError
           return
         end
 
-        translations = translations.dig(LANGUAGE)
+        # If there is no translations, do nothing
         return unless translations.is_a?(Hash)
+
+        # If the translations are empty, do nothing
+        return if translations.dig(@language).nil?
+
+        # Add entries again
+        translations = translations.dig(@language)
+        return unless translations.is_a?(Hash) # Check format of the translations
 
         process_translations(translations, path)
       end
 
-      def update_file(path)
-        begin
-          translations = YAML.load_file(path)
-        rescue Psych::SyntaxError
-          return
-        end
-
-        translations = translations.dig(LANGUAGE)
-        return unless translations.is_a?(Hash)
-
-        process_translations(translations, path)
-      end
-
-      def delete_file(path)
-        @data.delete_if { |_, value| value.any? { |v| v[:file] == path } }
-      end
-
-      def start
-        files = Dir.glob(@translation_path)
+      def start(glob = TRANSLATION_PATH)
+        files = Dir.glob(glob || @translation_path)
         files.each do |file|
-          load_file(file)
+          sync_file(file)
         end
       end
 
       private
+
+      def get_keys_from_file(file)
+        data.select { |_, value| value.any? { |v| v[:file] == file } }.keys
+      end
 
       def process_translations(translations, file, prefix = nil)
         translations.each do |key, value|

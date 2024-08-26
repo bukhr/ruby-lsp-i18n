@@ -16,9 +16,4 @@ class I18nAddonTest < Minitest::Test
   #   dispatcher.dispatch(document.tree)
   #   request.perform
   # end
-
-  def test_i18n_database
-    i18n_database = RubyLsp::RubyLspI18n::I18nDatabase.new
-    puts i18n_database.data
-  end
 end
