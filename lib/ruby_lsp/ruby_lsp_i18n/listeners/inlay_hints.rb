@@ -7,8 +7,8 @@ module RubyLsp
       include Requests::Support::Common
 
       def initialize(i18n_database, response_builder, range, hints_configuration, dispatcher, document) # rubocop:disable Metrics/ParameterLists
-        @absolute_path = URI.parse(document.uri).path
-        @path = Pathname(URI.parse(document.uri).path).relative_path_from(Dir.pwd)
+        @absolute_path = document.uri.path
+        @path = Pathname(document.uri.path).relative_path_from(Dir.pwd)
         @i18n_database = i18n_database
         @response_builder = response_builder
         @range = range
