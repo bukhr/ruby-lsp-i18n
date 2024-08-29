@@ -65,8 +65,8 @@ module RubyLsp
         "Ruby LSP I18n"
       end
 
-      def create_inlay_hints_listener(response_builder, range, hints_configuration, dispatcher)
-        InlayHints.new(@i18n_database, response_builder, range, hints_configuration, dispatcher)
+      def create_inlay_hints_listener(response_builder, range, hints_configuration, dispatcher, document)
+        InlayHints.new(@i18n_database, response_builder, range, hints_configuration, dispatcher, document)
       end
     end
   end

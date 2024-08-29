@@ -6,7 +6,9 @@ module RubyLsp
       extend T::Sig
       include Requests::Support::Common
 
-      def initialize(i18n_database, response_builder, range, hints_configuration, dispatcher)
+      def initialize(i18n_database, response_builder, range, hints_configuration, dispatcher, document) # rubocop:disable Metrics/ParameterLists
+        @absolute_path = URI.parse(document.uri).path
+        @path = Pathname(URI.parse(document.uri).path).relative_path_from(Dir.pwd)
         @i18n_database = i18n_database
         @response_builder = response_builder
         @range = range
@@ -43,9 +45,12 @@ module RubyLsp
           #{matches.map { |match| "- [#{match[:file]}](#{create_file_uri(match[:file])}): #{match[:value]}" }.join("\n")}
         MARKDOWN
 
+        suggested_path = @path.to_s.gsub("app", "config/locales").gsub(@path.basename.to_s, "es.yml")
+        suggested_path_link = @absolute_path.to_s.gsub("app", "config/locales").gsub(@path.basename.to_s, "es.yml")
         if matches.empty?
           tooltip_content += <<~MARKDOWN
-            ⚠️ Translation missing
+            ⚠️ Translation missing\n
+            suggested file: [#{suggested_path}](#{suggested_path_link})
           MARKDOWN
         end
 

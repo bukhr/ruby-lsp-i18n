@@ -2,5 +2,6 @@
     "cSpell.words": [
         "rubocop",
         "shopify"
-    ]
+    ],
+    "editor.inlayHints.enabled": "offUnlessPressed"
 }
