@@ -79,7 +79,8 @@ module RubyLsp
 
       # TO DO: Test in Windows and Mac OS
       def create_file_uri(path)
-        "#{Dir.pwd}/#{path}"
+        base_uri = "file://#{Dir.pwd}/"
+        URI.join(base_uri, path).to_s
       end
     end
   end

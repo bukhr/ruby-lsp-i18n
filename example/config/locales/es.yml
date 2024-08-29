@@ -1,12 +1,7 @@
 es:
   hello:
-    world: "Hola Mundo!"
-    mundo: "Mundo"
-    alo: "Baby Hello"
-    goodbye: "sdfkjssfdsdsdñvkldsmvlsfdscfdblksdvdvn"
-  a:
-   b: "Hellooo"
-
-  :true: "True"
-  :false: false
-  :nil:   "Nil"
+    world: "Hola mundo"
+    alo: "Hola"
+  mi:
+    super:
+      llave: "Mi super llave"
