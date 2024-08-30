@@ -1,258 +1,256 @@
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/example/example.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/requests/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/example/example.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/example/example.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/example/example.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/example/app/example.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
-InlayHints initialized
-Uri: file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/listeners/inlay_hints.rb
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/requests/inlay_hints.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/requests/inlay_hints.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/requests/inlay_hints.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/requests/inlay_hints.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/requests/inlay_hints.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/requests/inlay_hints.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/a.rb", :type=>1}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/a.rb", :type=>1}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/a.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/a.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/a.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/a.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/a.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/a.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/a.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/a.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash
+Changes: [{:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}]
+Changes class: Array
+Change: {:uri=>"file:///home/domingo/buk/ruby-lsp-i18n/lib/ruby_lsp/ruby_lsp_i18n/addon.rb", :type=>2}
+Change class: Hash

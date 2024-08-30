@@ -1,3 +1,4 @@
+# typed: strict
 # frozen_string_literal: true
 
 module RubyLsp
@@ -6,13 +7,20 @@ module RubyLsp
       extend T::Sig
       include Requests::Support::Common
 
-      def initialize(i18n_database, response_builder, range, hints_configuration, dispatcher, document) # rubocop:disable Metrics/ParameterLists
-        @absolute_path = document.uri.path
-        @path = Pathname(document.uri.path).relative_path_from(Dir.pwd)
+      sig do
+        params(
+          i18n_database: I18nDatabase,
+          response_builder: ResponseBuilders::CollectionResponseBuilder[Interface::InlayHint],
+          dispatcher: Prism::Dispatcher,
+          document: T.any(RubyDocument, ERBDocument),
+        ).void
+      end
+      def initialize(i18n_database, response_builder, dispatcher, document)
+        absolute_path = T.must(document.uri.path)
+        @absolute_path = T.let(absolute_path, String)
+        @path = T.let(Pathname(absolute_path).relative_path_from(Dir.pwd), Pathname)
         @i18n_database = i18n_database
         @response_builder = response_builder
-        @range = range
-        @hints_configuration = hints_configuration
 
         dispatcher.register(
           self,
@@ -20,29 +28,30 @@ module RubyLsp
         )
       end
 
-      def load_all_translation_keys
-      end
-
+      sig { params(node: Prism::CallNode).void }
       def on_call_node_enter(node)
         return unless node.name == :t
 
-        return unless node.receiver.is_a?(Prism::ConstantReadNode) && node.receiver.name == :I18n
+        receiver = node.receiver
+        return unless receiver.is_a?(Prism::ConstantReadNode)
 
-        return unless node.receiver.name == :I18n
+        return unless receiver.name == :I18n
 
-        return unless node.arguments.arguments.size == 1
+        arguments = node.arguments
+        return unless arguments
+        return unless arguments.arguments.size == 1
 
-        key = node.arguments.arguments.first
+        key_node = arguments.arguments.first
+        return unless key_node.is_a?(Prism::StringNode)
 
-        return unless key.is_a?(Prism::StringNode)
-
-        key = key.unescaped
+        key = key_node.unescaped
 
         matches = @i18n_database.find(key)
+        return unless matches
 
         tooltip_content = <<~MARKDOWN
           **Translations (es)**
-          #{matches.map { |match| "- [#{match[:file]}](#{create_file_uri(match[:file])}): #{match[:value]}" }.join("\n")}
+          #{matches.map { |match| "- [#{match.file}](#{create_file_uri(match.file)}): #{match.value}" }.join("\n")}
         MARKDOWN
 
         suggested_path = @path.to_s.gsub("app", "config/locales").gsub(@path.basename.to_s, "es.yml")
@@ -56,7 +65,7 @@ module RubyLsp
 
         if matches.size > 1
           tooltip_content += <<~MARKDOWN
-            \n⚠️ There are more than one translation for this key
+            \n ⚠️ There are more than one translation for this key
           MARKDOWN
         end
 
@@ -65,7 +74,7 @@ module RubyLsp
           value: tooltip_content,
         )
 
-        value = matches.first&.dig(:value) || "⚠️ Translation missing"
+        value = matches.first&.value || "⚠️ Translation missing"
 
         @response_builder << Interface::InlayHint.new(
           position: { line: node.location.start_line - 1, character: node.location.end_column },
@@ -77,7 +86,7 @@ module RubyLsp
 
       private
 
-      # TO DO: Test in Windows and Mac OS
+      sig { params(path: String).returns(String) }
       def create_file_uri(path)
         base_uri = "file://#{Dir.pwd}/"
         URI.join(base_uri, path).to_s

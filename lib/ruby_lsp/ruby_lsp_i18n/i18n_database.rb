@@ -1,43 +1,77 @@
+# typed: strict
 # frozen_string_literal: true
 
 module RubyLsp
   module RubyLspI18n
     # The database holds a data structure that maps i18n keys
     # to their values and the files they are defined in.
+
+    class Entry
+      extend T::Sig
+
+      sig { returns(String) }
+      attr_reader :value
+
+      sig { returns(String) }
+      attr_reader :file
+
+      sig { params(value: String, file: String).void }
+      def initialize(value, file)
+        @value = value
+        @file = file
+      end
+    end
+
     class I18nDatabase
+      extend T::Sig
+
+      sig { returns(T::Hash[String, T::Array[Entry]]) }
       attr_reader :data
 
+      sig { params(language: String).void }
       def initialize(language:)
         @language = language
-        @data = Hash.new do |hash, key|
-          hash[key] = []
-        end
+        @data = T.let(
+          Hash.new do |hash, key|
+            hash[key] = []
+          end,
+          T::Hash[String, T::Array[Entry]],
+        )
 
-        @file_keys = Hash.new do |hash, key|
-          hash[key] = []
-        end
+        @file_keys = T.let(
+          Hash.new do |hash, key|
+            hash[key] = []
+          end,
+          T::Hash[String, T::Array[String]],
+        )
       end
 
+      sig { params(key: String, value: String, file: String).void }
       def add(key, value, file)
-        @data[key] << { value: value, file: file }
-        @file_keys[file] << key
+        entry = Entry.new(value, file)
+        T.must(@data[key]) << entry
+        T.must(@file_keys[file]) << key
       end
 
+      sig { params(key: String, file: String).void }
       def remove(key, file)
-        @data[key].delete_if { |v| v[:file] == file }
-        @file_keys[file].delete(key)
+        T.must(@data[key]).delete_if { |v| v.file == file }
+        T.must(@file_keys[file]).delete(key)
       end
 
+      sig { params(key: String).returns(T.nilable(T::Array[RubyLsp::RubyLspI18n::Entry])) }
       def find(key)
         datum = @data.dig(key)
         datum
       end
 
+      sig { params(key: String, value: String, file: String).void }
       def update(key, value, file)
         remove(key, file)
         add(key, value, file)
       end
 
+      sig { params(path: String).void }
       def sync_file(path)
         # Clean entries from the file
         current_keys = get_keys_from_file(path)
@@ -67,19 +101,14 @@ module RubyLsp
         process_translations(translations, path)
       end
 
-      def start(glob = TRANSLATION_PATH)
-        files = Dir.glob(glob || @translation_path)
-        files.each do |file|
-          sync_file(file)
-        end
-      end
-
       private
 
+      sig { params(file: String).returns(T::Array[String]) }
       def get_keys_from_file(file)
-        @file_keys[file]
+        T.must(@file_keys[file])
       end
 
+      sig { params(translations: T::Hash[String, T.untyped], file: String, prefix: T.nilable(String)).void }
       def process_translations(translations, file, prefix = nil)
         translations.each do |key, value|
           full_key = prefix ? "#{prefix}.#{key}" : key

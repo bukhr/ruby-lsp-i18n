@@ -1,3 +1,4 @@
+# typed: strict
 # frozen_string_literal: true
 
 # Moneky patch overrifing the InlayHints Initializer
@@ -18,7 +19,7 @@ module RubyLsp
 
         Addon.addons.each do |addon|
           if addon.respond_to?(:create_inlay_hints_listener)
-            addon.create_inlay_hints_listener(@response_builder, start_line..end_line, hints_configuration, dispatcher, document)
+            addon.create_inlay_hints_listener(@response_builder, dispatcher, document)
           end
         end
       end

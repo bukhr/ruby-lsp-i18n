@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/ruby_lsp/i18n/version"
+require_relative "lib/ruby_lsp_i18n/version"
 
 Gem::Specification.new do |spec|
   spec.name = "ruby-lsp-i18n"
