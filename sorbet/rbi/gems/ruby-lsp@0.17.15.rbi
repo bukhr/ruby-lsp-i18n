@@ -5301,6 +5301,22 @@ end
 # source://ruby-lsp/lib/ruby_lsp/store.rb#8
 class RubyLsp::Store::NonExistingDocumentError < ::StandardError; end
 
+# source://ruby-lsp/lib/ruby_lsp/test_helper.rb#7
+module RubyLsp::TestHelper
+  # source://ruby-lsp/lib/ruby_lsp/test_helper.rb#20
+  sig do
+    type_parameters(:T)
+      .params(
+        source: T.nilable(::String),
+        uri: ::URI::Generic,
+        stub_no_typechecker: T::Boolean,
+        load_addons: T::Boolean,
+        block: T.proc.params(server: ::RubyLsp::Server, uri: ::URI::Generic).returns(T.type_parameter(:T))
+      ).returns(T.type_parameter(:T))
+  end
+  def with_server(source = T.unsafe(nil), uri = T.unsafe(nil), stub_no_typechecker: T.unsafe(nil), load_addons: T.unsafe(nil), &block); end
+end
+
 # source://ruby-lsp/lib/ruby_lsp/utils.rb#8
 RubyLsp::Transport = LanguageServer::Protocol::Transport
 

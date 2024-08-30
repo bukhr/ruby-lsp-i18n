@@ -2,8 +2,9 @@
 # frozen_string_literal: true
 
 require "ruby_lsp/addon"
-require_relative "listeners/inlay_hints"
 require_relative "requests/inlay_hints"
+require_relative "listeners/inlay_hints"
+require_relative "listeners/completion"
 require_relative "i18n_database"
 
 module RubyLsp
@@ -85,6 +86,18 @@ module RubyLsp
       end
       def create_inlay_hints_listener(response_builder, dispatcher, document)
         InlayHints.new(@i18n_database, response_builder, dispatcher, document)
+      end
+
+      sig do
+        override.params(
+          response_builder: RubyLsp::ResponseBuilders::CollectionResponseBuilder[LanguageServer::Protocol::Interface::CompletionItem],
+          node_context: RubyLsp::NodeContext,
+          dispatcher: Prism::Dispatcher,
+          uri: URI::Generic,
+        ).void
+      end
+      def create_completion_listener(response_builder, node_context, dispatcher, uri)
+        Completion.new(@i18n_database, response_builder, dispatcher)
       end
     end
   end

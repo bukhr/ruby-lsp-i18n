@@ -31,12 +31,7 @@ module RubyLsp
       sig { params(language: String).void }
       def initialize(language:)
         @language = language
-        @data = T.let(
-          Hash.new do |hash, key|
-            hash[key] = []
-          end,
-          T::Hash[String, T::Array[Entry]],
-        )
+        @data = T.let({}, T::Hash[String, T::Array[Entry]])
 
         @file_keys = T.let(
           Hash.new do |hash, key|
@@ -49,12 +44,15 @@ module RubyLsp
       sig { params(key: String, value: String, file: String).void }
       def add(key, value, file)
         entry = Entry.new(value, file)
+        @data[key] ||= []
         T.must(@data[key]) << entry
         T.must(@file_keys[file]) << key
       end
 
       sig { params(key: String, file: String).void }
       def remove(key, file)
+        return unless @data[key]
+
         T.must(@data[key]).delete_if { |v| v.file == file }
         T.must(@file_keys[file]).delete(key)
       end
