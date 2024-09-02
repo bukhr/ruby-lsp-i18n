@@ -83,6 +83,7 @@ class I18nAddonTest < Minitest::Test
       assert_equal(2, result.length)
 
       assert_equal('"test.addon"', result[0].label)
+      assert_equal('"test.addon"', result[0].detail.inspect)
       assert_equal('"test.addon"', result[0].text_edit.new_text)
       assert_equal(0, result[0].text_edit.range.start.line)
       assert_equal(7, result[0].text_edit.range.start.character)
@@ -90,6 +91,7 @@ class I18nAddonTest < Minitest::Test
       assert_equal(13, result[0].text_edit.range.end.character)
 
       assert_equal('"test.bar"', result[1].label)
+      assert_equal('"test.bar"', result[1].detail.inspect)
       assert_equal(0, result[1].text_edit.range.start.line)
       assert_equal(7, result[1].text_edit.range.start.character)
       assert_equal(0, result[1].text_edit.range.end.line)

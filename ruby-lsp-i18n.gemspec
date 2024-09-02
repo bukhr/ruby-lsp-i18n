@@ -32,6 +32,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
+  spec.add_dependency("fast_trie", "~> 0.5.1")
   spec.add_dependency("ruby-lsp", "~> 0.17.15", "< 0.18.0")
 
   # For more information and examples about making a new gem, check out our

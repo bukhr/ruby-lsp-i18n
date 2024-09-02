@@ -43,11 +43,13 @@ module RubyLsp
 
         key = key_node.unescaped
 
-        candidates = @i18n_database.data.keys.filter { |k| k.start_with?(key) }
+        candidates = @i18n_database.find_prefix(key)
 
         candidates.each do |candidate|
           response = Interface::CompletionItem.new(
             label: "\"#{candidate}\"",
+            detail: candidate,
+            documentation: "candidate",
             text_edit: Interface::TextEdit.new(
               range: range_from_location(key_node.location),
               new_text: "\"#{candidate}\"",

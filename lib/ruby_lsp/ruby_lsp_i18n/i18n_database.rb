@@ -1,6 +1,7 @@
 # typed: strict
 # frozen_string_literal: true
 
+require "trie"
 module RubyLsp
   module RubyLspI18n
     # The database holds a data structure that maps i18n keys
@@ -39,6 +40,8 @@ module RubyLsp
           end,
           T::Hash[String, T::Array[String]],
         )
+
+        @keys_tree = T.let(Trie.new, Trie)
       end
 
       sig { params(key: String, value: String, file: String).void }
@@ -47,6 +50,7 @@ module RubyLsp
         @data[key] ||= []
         T.must(@data[key]) << entry
         T.must(@file_keys[file]) << key
+        @keys_tree.add(key)
       end
 
       sig { params(key: String, file: String).void }
@@ -55,12 +59,18 @@ module RubyLsp
 
         T.must(@data[key]).delete_if { |v| v.file == file }
         T.must(@file_keys[file]).delete(key)
+        @keys_tree.delete(key)
       end
 
       sig { params(key: String).returns(T.nilable(T::Array[RubyLsp::RubyLspI18n::Entry])) }
       def find(key)
         datum = @data.dig(key)
         datum
+      end
+
+      sig { params(prefix: String).returns(T::Array[String]) }
+      def find_prefix(prefix)
+        @keys_tree.children(prefix)
       end
 
       sig { params(key: String, value: String, file: String).void }
@@ -110,6 +120,7 @@ module RubyLsp
       def process_translations(translations, file, prefix = nil)
         translations.each do |key, value|
           full_key = prefix ? "#{prefix}.#{key}" : key
+          full_key = full_key.to_s
           if value.is_a?(Hash)
             process_translations(value, file, full_key)
           else
