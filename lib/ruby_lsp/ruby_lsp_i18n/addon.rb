@@ -90,7 +90,9 @@ module RubyLsp
 
       sig do
         override.params(
-          response_builder: RubyLsp::ResponseBuilders::CollectionResponseBuilder[LanguageServer::Protocol::Interface::CompletionItem],
+          response_builder: RubyLsp::ResponseBuilders::CollectionResponseBuilder[
+            LanguageServer::Protocol::Interface::CompletionItem
+          ],
           node_context: RubyLsp::NodeContext,
           dispatcher: Prism::Dispatcher,
           uri: URI::Generic,

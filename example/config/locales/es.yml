@@ -1,7 +1,6 @@
 es:
   hello:
-    world: "Hola mundo"
-    alo: "Hola"
+    world: "Hello world!"
   mi:
     super:
       llave: "Mi super llave"
