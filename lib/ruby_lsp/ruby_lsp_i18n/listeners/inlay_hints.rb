@@ -55,7 +55,7 @@ module RubyLsp
         MARKDOWN
 
         suggested_path = @path.to_s.gsub("app", "config/locales").gsub(@path.basename.to_s, "es.yml")
-        suggested_path_link = @absolute_path.to_s.gsub("app", "config/locales").gsub(@path.basename.to_s, "es.yml")
+        suggested_path_link = create_file_uri(suggested_path)
         if matches.empty?
           tooltip_content += <<~MARKDOWN
             ⚠️ Translation missing\n
