@@ -47,7 +47,7 @@ module RubyLsp
         key = key_node.unescaped
 
         matches = @i18n_database.find(key)
-        return unless matches
+        matches ||= []
 
         tooltip_content = <<~MARKDOWN
           **Translations (es)**
