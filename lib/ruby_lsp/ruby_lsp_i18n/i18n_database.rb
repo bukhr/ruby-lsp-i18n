@@ -26,9 +26,6 @@ module RubyLsp
     class I18nDatabase
       extend T::Sig
 
-      sig { returns(T::Hash[String, T::Array[Entry]]) }
-      attr_reader :data
-
       sig { params(language: String).void }
       def initialize(language:)
         @language = language
@@ -62,10 +59,10 @@ module RubyLsp
         @keys_tree.delete(key)
       end
 
-      sig { params(key: String).returns(T.nilable(T::Array[RubyLsp::RubyLspI18n::Entry])) }
+      sig { params(key: String).returns(T::Array[RubyLsp::RubyLspI18n::Entry]) }
       def find(key)
         datum = @data.dig(key)
-        datum
+        datum.nil? ? [] : datum
       end
 
       sig { params(prefix: String).returns(T::Array[String]) }
