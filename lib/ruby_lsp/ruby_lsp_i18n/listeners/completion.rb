@@ -42,17 +42,18 @@ module RubyLsp
         return unless key_node.is_a?(Prism::StringNode)
 
         key = key_node.unescaped
-
+        quote = T.must(key_node.opening_loc).slice
         candidates = @i18n_database.find_prefix(key)
 
         candidates.each do |candidate|
+          new_text = "#{quote}#{candidate}#{quote}"
           response = Interface::CompletionItem.new(
-            label: "\"#{candidate}\"",
+            label: new_text,
             detail: candidate,
             documentation: "candidate",
             text_edit: Interface::TextEdit.new(
               range: range_from_location(key_node.location),
-              new_text: "\"#{candidate}\"",
+              new_text: new_text,
             ),
             kind: Constant::CompletionItemKind::VALUE,
           )
