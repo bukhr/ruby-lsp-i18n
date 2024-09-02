@@ -5,7 +5,7 @@ require "ruby_lsp/addon"
 require_relative "requests/inlay_hints"
 require_relative "listeners/inlay_hints"
 require_relative "listeners/completion"
-require_relative "i18n_database"
+require_relative "i18n_index"
 
 module RubyLsp
   module RubyLspI18n
@@ -17,11 +17,11 @@ module RubyLsp
       sig { void }
       def initialize
         super
-        @i18n_database = T.let(I18nDatabase.new(language: "es"), I18nDatabase)
+        @i18n_index = T.let(I18nIndex.new(language: "es"), I18nIndex)
 
         files = Dir[GLOB_PATH]
         files.each do |file|
-          @i18n_database.sync_file(file)
+          @i18n_index.sync_file(file)
         end
       end
 
@@ -67,7 +67,7 @@ module RubyLsp
           next if path.nil?
 
           path = path.gsub(Dir.pwd + "/", "")
-          @i18n_database.sync_file(path)
+          @i18n_index.sync_file(path)
         end
       end
 
@@ -85,7 +85,7 @@ module RubyLsp
         ).void
       end
       def create_inlay_hints_listener(response_builder, dispatcher, document)
-        InlayHints.new(@i18n_database, response_builder, dispatcher, document)
+        InlayHints.new(@i18n_index, response_builder, dispatcher, document)
       end
 
       sig do
@@ -99,7 +99,7 @@ module RubyLsp
         ).void
       end
       def create_completion_listener(response_builder, node_context, dispatcher, uri)
-        Completion.new(@i18n_database, response_builder, dispatcher)
+        Completion.new(@i18n_index, response_builder, dispatcher)
       end
     end
   end

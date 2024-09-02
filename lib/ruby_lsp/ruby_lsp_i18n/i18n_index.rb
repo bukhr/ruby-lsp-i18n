@@ -4,7 +4,7 @@
 require "trie"
 module RubyLsp
   module RubyLspI18n
-    # The database holds a data structure that maps i18n keys
+    # The index holds a data structure that maps i18n keys
     # to their values and the files they are defined in.
 
     class Entry
@@ -23,7 +23,7 @@ module RubyLsp
       end
     end
 
-    class I18nDatabase
+    class I18nIndex
       extend T::Sig
 
       sig { params(language: String).void }

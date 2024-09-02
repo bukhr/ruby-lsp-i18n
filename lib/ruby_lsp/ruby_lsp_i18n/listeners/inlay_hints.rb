@@ -9,17 +9,17 @@ module RubyLsp
 
       sig do
         params(
-          i18n_database: I18nDatabase,
+          i18n_index: I18nIndex,
           response_builder: ResponseBuilders::CollectionResponseBuilder[Interface::InlayHint],
           dispatcher: Prism::Dispatcher,
           document: T.any(RubyDocument, ERBDocument),
         ).void
       end
-      def initialize(i18n_database, response_builder, dispatcher, document)
+      def initialize(i18n_index, response_builder, dispatcher, document)
         absolute_path = T.must(document.uri.path)
         @absolute_path = T.let(absolute_path, String)
         @path = T.let(Pathname(absolute_path).relative_path_from(Dir.pwd), Pathname)
-        @i18n_database = i18n_database
+        @i18n_index = i18n_index
         @response_builder = response_builder
 
         dispatcher.register(
@@ -46,7 +46,7 @@ module RubyLsp
 
         key = key_node.unescaped
 
-        matches = @i18n_database.find(key)
+        matches = @i18n_index.find(key)
 
         tooltip_content = <<~MARKDOWN
           **Translations (es)**

@@ -9,13 +9,13 @@ module RubyLsp
 
       sig do
         params(
-          i18n_database: I18nDatabase,
+          i18n_index: I18nIndex,
           response_builder: ResponseBuilders::CollectionResponseBuilder[Interface::CompletionItem],
           dispatcher: Prism::Dispatcher,
         ).void
       end
-      def initialize(i18n_database, response_builder, dispatcher)
-        @i18n_database = i18n_database
+      def initialize(i18n_index, response_builder, dispatcher)
+        @i18n_index = i18n_index
         @response_builder = response_builder
         @dispatcher = dispatcher
 
@@ -43,7 +43,7 @@ module RubyLsp
 
         key = key_node.unescaped
         quote = T.must(key_node.opening_loc).slice
-        candidates = @i18n_database.find_prefix(key)
+        candidates = @i18n_index.find_prefix(key)
 
         candidates.each do |candidate|
           new_text = "#{quote}#{candidate}#{quote}"
