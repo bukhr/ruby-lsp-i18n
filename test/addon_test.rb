@@ -60,6 +60,36 @@ class I18nAddonTest < Minitest::Test
     end
   end
 
+  def test_addon_inlay_hint_translation_missing
+    source = <<~RUBY
+      I18n.t("missing.key")
+    RUBY
+
+    with_server(source, @uri) do |server, uri|
+      # First we get the response for the file watcher
+      server.pop_response
+
+      # Then we get the response for the inlay hint
+      server.process_message({
+        id: 1,
+        method: "textDocument/inlayHint",
+        params: {
+          textDocument: {
+            uri: uri,
+          },
+          range: {
+            start: { line: 0, character: 0 },
+          },
+        },
+      })
+      result = server.pop_response.response
+      inlay_hint = result.first
+
+      assert_equal("⚠️ Translation missing", inlay_hint.label)
+      assert_equal(inlay_hint.tooltip.kind, "markdown")
+    end
+  end
+
   def test_addon_autocomplete
     source = <<~RUBY
       I18n.t("test")
