@@ -36,7 +36,7 @@ module RubyLsp
 
         arguments = node.arguments
         return unless arguments
-        return unless arguments.arguments.size == 1
+        return if arguments.arguments.empty?
 
         key_node = arguments.arguments.first
         return unless key_node.is_a?(Prism::StringNode)
