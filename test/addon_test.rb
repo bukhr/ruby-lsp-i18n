@@ -60,6 +60,39 @@ class I18nAddonTest < Minitest::Test
     end
   end
 
+  def test_addon_inlay_hint_multiple_parameters
+    source = <<~RUBY
+      I18n.t("test.addon", bar: "bar")
+    RUBY
+
+    with_server(source, @uri) do |server, uri|
+      # First we get the response for the file watcher
+      server.pop_response
+
+      # Then we get the response for the inlay hint
+      server.process_message({
+        id: 1,
+        method: "textDocument/inlayHint",
+        params: {
+          textDocument: {
+            uri: uri,
+          },
+          range: {
+            start: { line: 0, character: 0 },
+          },
+        },
+      })
+      result = server.pop_response.response
+      inlay_hint = result.first
+
+      tooltip_content = "**Translations (es)**\n" + "- [test/fixtures/config/locales/es.yml](file://#{Dir.pwd}/test/fixtures/config/locales/es.yml): Test Addon\n" # rubocop:disable Layout/LineLength
+      assert_equal("Test Addon", inlay_hint.label)
+
+      assert_equal(inlay_hint.tooltip.kind, "markdown")
+      assert_equal(inlay_hint.tooltip.value, tooltip_content)
+    end
+  end
+
   def test_addon_inlay_hint_translation_missing
     source = <<~RUBY
       I18n.t("missing.key")
