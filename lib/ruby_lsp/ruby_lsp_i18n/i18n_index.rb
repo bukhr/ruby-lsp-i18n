@@ -1,7 +1,7 @@
 # typed: strict
 # frozen_string_literal: true
 
-require "trie"
+require_relative "prefix_tree"
 module RubyLsp
   module RubyLspI18n
     # The index holds a data structure that maps i18n keys
@@ -38,7 +38,7 @@ module RubyLsp
           T::Hash[String, T::Array[String]],
         )
 
-        @keys_tree = T.let(Trie.new, Trie)
+        @keys_tree = T.let(RubyLsp::RubyLspI18n::PrefixTree.new, RubyLsp::RubyLspI18n::PrefixTree[String])
       end
 
       sig { params(key: String, value: String, file: String).void }
@@ -47,7 +47,7 @@ module RubyLsp
         @data[key] ||= []
         T.must(@data[key]) << entry
         T.must(@file_keys[file]) << key
-        @keys_tree.add(key)
+        @keys_tree.insert(key, key)
       end
 
       sig { params(key: String, file: String).void }
@@ -67,7 +67,7 @@ module RubyLsp
 
       sig { params(prefix: String).returns(T::Array[String]) }
       def find_prefix(prefix)
-        @keys_tree.children(prefix)
+        @keys_tree.search(prefix)
       end
 
       sig { params(key: String, value: String, file: String).void }
