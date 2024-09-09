@@ -93,6 +93,33 @@ class I18nAddonTest < Minitest::Test
     end
   end
 
+  def test_addon_inlay_hint_scope_parameter
+    source = <<~RUBY
+      I18n.t("addon", scope: "test")
+    RUBY
+
+    with_server(source, @uri) do |server, uri|
+      # First we get the response for the file watcher
+      server.pop_response
+
+      # Then we get the response for the inlay hint
+      server.process_message({
+        id: 1,
+        method: "textDocument/inlayHint",
+        params: {
+          textDocument: {
+            uri: uri,
+          },
+          range: {
+            start: { line: 0, character: 0 },
+          },
+        },
+      })
+      result = server.pop_response.response
+      assert_equal([], result)
+    end
+  end
+
   def test_addon_inlay_hint_translation_missing
     source = <<~RUBY
       I18n.t("missing.key")

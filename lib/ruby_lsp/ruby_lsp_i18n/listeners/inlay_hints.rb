@@ -41,6 +41,8 @@ module RubyLsp
         return unless arguments
         return if arguments.arguments.empty?
 
+        return if i18n_arguments_has_scope_argument(arguments)
+
         key_node = arguments.arguments.first
         return unless key_node.is_a?(Prism::StringNode)
 
@@ -89,6 +91,27 @@ module RubyLsp
       def create_file_uri(path)
         base_uri = "file://#{Dir.pwd}/"
         URI.join(base_uri, path).to_s
+      end
+
+      sig { params(arguments: Prism::ArgumentsNode).returns(T::Boolean) }
+      def i18n_arguments_has_scope_argument(arguments)
+        arguments = arguments.arguments
+        return false if arguments.size <= 1
+
+        # Check if the key is scoped, and if it is, ignore it
+        keyword_arguments = arguments[1]
+        if keyword_arguments.is_a?(Prism::KeywordHashNode)
+          keyword_argument_nodes = keyword_arguments.elements.grep(Prism::AssocNode)
+          keyword_argument_nodes.each do |arg|
+            key = arg.key
+            next unless key.is_a?(Prism::SymbolNode)
+
+            if key.value == "scope"
+              return true
+            end
+          end
+        end
+        false
       end
     end
   end
