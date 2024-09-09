@@ -1,4 +1,8 @@
 ## [Unreleased]
+## [0.2.1] - 2024-09-09
+
+- Fix translation missing inlay hint in scoped I18n.t calls
+
 ## [0.2.0] - 2024-09-09
 
 - Added enable/disable addon vía .vscode.settings.json file using https://github.com/Shopify/ruby-lsp/pull/2513
