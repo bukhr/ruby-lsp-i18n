@@ -1,4 +1,5 @@
 ## [Unreleased]
+## [0.2.0] - 2024-09-09
 
 - Added enable/disable addon vía .vscode.settings.json file using https://github.com/Shopify/ruby-lsp/pull/2513
 
