@@ -18,16 +18,22 @@ module RubyLsp
       def initialize
         super
         @i18n_index = T.let(I18nIndex.new(language: "es"), I18nIndex)
-
-        files = Dir[GLOB_PATH]
-        files.each do |file|
-          @i18n_index.sync_file(file)
-        end
+        @enabled = T.let(true, T::Boolean)
       end
 
       # Performs any activation that needs to happen once when the language server is booted)}
       sig { override.params(global_state: RubyLsp::GlobalState, message_queue: Thread::Queue).void }
       def activate(global_state, message_queue)
+        settings = global_state.settings_for_addon(name) || {}
+        @enabled = settings[:enabled] if settings.key?(:enabled)
+
+        return unless @enabled
+
+        files = Dir[GLOB_PATH]
+        files.each do |file|
+          @i18n_index.sync_file(file)
+        end
+
         message_queue << Request.new(
           id: "ruby-lsp-my-gem-file-watcher",
           method: "client/registerCapability",
@@ -85,6 +91,8 @@ module RubyLsp
         ).void
       end
       def create_inlay_hints_listener(response_builder, dispatcher, document)
+        return unless @enabled
+
         InlayHints.new(@i18n_index, response_builder, dispatcher, document)
       end
 
@@ -99,6 +107,8 @@ module RubyLsp
         ).void
       end
       def create_completion_listener(response_builder, node_context, dispatcher, uri)
+        return unless @enabled
+
         Completion.new(@i18n_index, response_builder, dispatcher)
       end
     end

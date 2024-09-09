@@ -1,4 +1,7 @@
 ## [Unreleased]
+
+- Added enable/disable addon vía .vscode.settings.json file using https://github.com/Shopify/ruby-lsp/pull/2513
+
 ## [0.1.0] - 2024-09-03
 
 - Added inlay hints with translation value for I18n.t("key") calls

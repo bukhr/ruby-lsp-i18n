@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     ruby-lsp-i18n (0.1.0)
-      ruby-lsp (~> 0.17.15, < 0.18.0)
+      ruby-lsp (~> 0.17.17, < 0.18.0)
 
 GEM
   remote: https://rubygems.org/
@@ -22,12 +22,12 @@ GEM
     parser (3.3.4.2)
       ast (~> 2.4.1)
       racc
-    prism (0.30.0)
+    prism (1.0.0)
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.2.1)
-    rbi (0.1.14)
-      prism (>= 0.18.0, < 1.0.0)
+    rbi (0.2.0)
+      prism (~> 1.0)
       sorbet-runtime (>= 0.5.9204)
     rbs (3.5.2)
       logger
@@ -56,9 +56,9 @@ GEM
       rubocop (~> 1.51)
     rubocop-sorbet (0.8.5)
       rubocop (>= 1)
-    ruby-lsp (0.17.15)
+    ruby-lsp (0.17.17)
       language_server-protocol (~> 3.17.0)
-      prism (>= 0.29.0, < 0.31)
+      prism (~> 1.0)
       rbs (>= 3, < 4)
       sorbet-runtime (>= 0.5.10782)
     ruby-progressbar (1.13.0)
@@ -75,11 +75,11 @@ GEM
       sorbet-static-and-runtime (>= 0.5.10187)
       thor (>= 0.19.2)
     strscan (3.1.0)
-    tapioca (0.16.1)
+    tapioca (0.16.2)
       bundler (>= 2.2.25)
       netrc (>= 0.11.0)
       parallel (>= 1.21.0)
-      rbi (>= 0.1.14, < 0.2)
+      rbi (~> 0.2)
       sorbet-static-and-runtime (>= 0.5.11087)
       spoom (>= 1.2.0)
       thor (>= 1.2.0)
