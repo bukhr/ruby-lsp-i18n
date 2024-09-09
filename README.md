@@ -4,15 +4,17 @@ The `ruby-lsp-i18n` gem provides internationalization support for Ruby Lsp.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add to the following line to your application's development Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
+```ruby
+gem 'ruby-lsp-i18n', git: 'https://github.com/bukhr/ruby-lsp-i18n', require: false
+```
 
-    bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+Then run the following command to install the gem:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```bash
+bundle install
+```
 
 ## Features
 
@@ -26,6 +28,20 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ![Ruby LSP I18n Demo](media/demo.gif)
 
+### Configuration
+
+The addon is enabled by default but can be disabled using the .vscode/settings.json file in your project.
+
+```json
+{
+  "rubyLsp.addonSettings": {
+    "Ruby LSP I18n": {
+        "enabled": false
+    }
+  }
+}
+```
+
 ## Development
 
 1. Clone the repository
@@ -38,11 +54,15 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 To install this gem onto your local machine, run `bundle exec rake install`.
 
-<!-- To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org). -->
+### Updating Ruby LSP
+
+It is important to maintain this gem up to date with the latest version of Ruby Lsp. So the users of the gem have the updated features of the core LSP. To do so update the Ruby LSP version in the `ruby-lsp-i18n.gemspec` file. Then run the tests and make sure everything is working as expected.
+
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at <https://github.com/bukhr/ruby-lsp-i18n>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/bukhr/ruby-lsp-i18n/blob/master/CODE_OF_CONDUCT.md).
+
 
 ## License
 

@@ -3,5 +3,10 @@
         "rubocop",
         "shopify"
     ],
-    "editor.inlayHints.enabled": "offUnlessPressed"
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "rubyLsp.addonSettings": {
+        "Ruby LSP I18n": {
+            "enabled": true
+        }
+    }
 }
