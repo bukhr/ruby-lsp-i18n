@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     ruby-lsp-i18n (0.2.1)
-      ruby-lsp (~> 0.17.17, < 0.18.0)
 
 GEM
   remote: https://rubygems.org/
@@ -15,21 +14,21 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
-    logger (1.6.0)
+    logger (1.6.1)
     minitest (5.25.1)
     netrc (0.11.0)
     parallel (1.26.3)
     parser (3.3.4.2)
       ast (~> 2.4.1)
       racc
-    prism (1.0.0)
+    prism (1.2.0)
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.2.1)
     rbi (0.2.0)
       prism (~> 1.0)
       sorbet-runtime (>= 0.5.9204)
-    rbs (3.5.2)
+    rbs (3.6.1)
       logger
     regexp_parser (2.9.2)
     rexml (3.3.6)
@@ -56,9 +55,9 @@ GEM
       rubocop (~> 1.51)
     rubocop-sorbet (0.8.5)
       rubocop (>= 1)
-    ruby-lsp (0.17.17)
+    ruby-lsp (0.21.3)
       language_server-protocol (~> 3.17.0)
-      prism (~> 1.0)
+      prism (>= 1.2, < 2.0)
       rbs (>= 3, < 4)
       sorbet-runtime (>= 0.5.10782)
     ruby-progressbar (1.13.0)
@@ -104,6 +103,7 @@ DEPENDENCIES
   rubocop-rake (~> 0.6.0)
   rubocop-shopify (~> 2.15)
   rubocop-sorbet (~> 0.8)
+  ruby-lsp (~> 0.21)
   ruby-lsp-i18n!
   sorbet-static-and-runtime
   tapioca

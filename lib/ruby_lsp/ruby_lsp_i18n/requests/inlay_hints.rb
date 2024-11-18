@@ -6,16 +6,14 @@
 module RubyLsp
   module Requests
     class InlayHints < Request
-      def initialize(document, range, hints_configuration, dispatcher)
+      def initialize(document, hints_configuration, dispatcher)
         super()
-        start_line = range.dig(:start, :line)
-        end_line = range.dig(:end, :line)
 
         @response_builder = T.let(
           ResponseBuilders::CollectionResponseBuilder[Interface::InlayHint].new,
           ResponseBuilders::CollectionResponseBuilder[Interface::InlayHint],
         )
-        Listeners::InlayHints.new(@response_builder, start_line..end_line, hints_configuration, dispatcher)
+        Listeners::InlayHints.new(@response_builder, hints_configuration, dispatcher)
 
         Addon.addons.each do |addon|
           if addon.respond_to?(:create_inlay_hints_listener)
