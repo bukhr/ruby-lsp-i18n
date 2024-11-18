@@ -1,4 +1,8 @@
 ## [Unreleased]
+## [0.2.2] - 2024-11-18
+
+- Update ruby LSP version to 0.21.3 and change runtime dependency to version constraint using the RubyLSP version constraint API to be forward compatible with new LSP versions. Now when the LSP get a breaking change the addon is disabled instead of locking the core LSP version in the editor.
+
 ## [0.2.1] - 2024-09-09
 
 - Fix translation missing inlay hint in scoped I18n.t calls
