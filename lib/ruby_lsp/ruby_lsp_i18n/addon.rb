@@ -7,6 +7,8 @@ require_relative "listeners/inlay_hints"
 require_relative "listeners/completion"
 require_relative "i18n_index"
 
+RubyLsp::Addon.depend_on_ruby_lsp!("~> 0.21.0")
+
 module RubyLsp
   module RubyLspI18n
     GLOB_PATH = "**/config/locales/**/es.yml"
@@ -75,6 +77,11 @@ module RubyLsp
           path = path.gsub(Dir.pwd + "/", "")
           @i18n_index.sync_file(path)
         end
+      end
+
+      sig { override.returns(String) }
+      def version
+        RubyLsp::RubyLspI18n::VERSION
       end
 
       # Returns the name of the addon
