@@ -1,4 +1,7 @@
 ## [Unreleased]
+## [0.2.3] - 2024-11-29
+- Update ruby lsp version to 0.22.0
+
 ## [0.2.2] - 2024-11-18
 
 - Update ruby LSP version to 0.21.3 and change runtime dependency to version constraint using the RubyLSP version constraint API to be forward compatible with new LSP versions. Now when the LSP get a breaking change the addon is disabled instead of locking the core LSP version in the editor.
