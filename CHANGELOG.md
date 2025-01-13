@@ -1,4 +1,6 @@
 ## [Unreleased]
+## [0.2.4] - 2025-01-13
+- Update ruby lsp version to 0.23.0
 ## [0.2.3] - 2024-11-29
 - Update ruby lsp version to 0.22.0
 

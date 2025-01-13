@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby-lsp-i18n (0.2.3)
+    ruby-lsp-i18n (0.2.4)
 
 GEM
   remote: https://rubygems.org/
