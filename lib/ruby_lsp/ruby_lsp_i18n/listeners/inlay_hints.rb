@@ -51,11 +51,13 @@ module RubyLsp
         matches = @i18n_index.find(key)
 
         tooltip_content = <<~MARKDOWN
-          **Translations (es)**
+          **Translations (#{@i18n_index.language})**
           #{matches.map { |match| "- [#{match.file}](#{create_file_uri(match.file)}): #{match.value}" }.join("\n")}
         MARKDOWN
 
-        suggested_path = @path.to_s.gsub("app", "config/locales").gsub(@path.basename.to_s, "es.yml")
+        suggested_path = @path.to_s
+          .gsub("app", "config/locales")
+          .gsub(@path.basename.to_s, "#{@i18n_index.language}.yml")
         suggested_path_link = create_file_uri(suggested_path)
         if matches.empty?
           tooltip_content += <<~MARKDOWN

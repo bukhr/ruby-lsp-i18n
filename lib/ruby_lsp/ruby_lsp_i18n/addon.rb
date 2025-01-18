@@ -12,7 +12,7 @@ RubyLsp::Addon.depend_on_ruby_lsp!("~> 0.23.0")
 
 module RubyLsp
   module RubyLspI18n
-    GLOB_PATH = "**/config/locales/**/es.yml"
+    GLOB_PATH = "**/config/locales/**/%s.yml"
     # This class is the entry point for the addon. It is responsible for activating and deactivating the addon
     class Addon < ::RubyLsp::Addon
       extend T::Sig
@@ -20,8 +20,9 @@ module RubyLsp
       sig { void }
       def initialize
         super
-        @i18n_index = T.let(I18nIndex.new(language: "es"), I18nIndex)
+        @i18n_index = T.let(nil, T.nilable(I18nIndex))
         @enabled = T.let(true, T::Boolean)
+        @language = T.let("es", String)
       end
 
       # Performs any activation that needs to happen once when the language server is booted)}
@@ -29,10 +30,13 @@ module RubyLsp
       def activate(global_state, message_queue)
         settings = global_state.settings_for_addon(name) || {}
         @enabled = settings[:enabled] if settings.key?(:enabled)
-
         return unless @enabled
 
-        files = Dir[GLOB_PATH]
+        @language = settings[:language] if settings[:language]
+        @i18n_index = I18nIndex.new(language: @language)
+
+        files_path = GLOB_PATH % @language
+        files = Dir[files_path]
         files.each do |file|
           @i18n_index.sync_file(file)
         end
@@ -48,7 +52,7 @@ module RubyLsp
                 register_options: Interface::DidChangeWatchedFilesRegistrationOptions.new(
                   watchers: [
                     Interface::FileSystemWatcher.new(
-                      glob_pattern: GLOB_PATH,
+                      glob_pattern: files_path,
                       kind: Constant::WatchKind::CREATE | Constant::WatchKind::CHANGE | Constant::WatchKind::DELETE,
                     ),
                   ],
@@ -65,6 +69,8 @@ module RubyLsp
 
       sig { params(changes: T::Array[T::Hash[Symbol, T.untyped]]).void }
       def workspace_did_change_watched_files(changes)
+        return unless @i18n_index
+
         changes.each do |change|
           change = Interface::FileEvent.new(uri: change[:uri], type: change[:type])
           uri = T.let(change.uri, String)
@@ -99,7 +105,7 @@ module RubyLsp
         ).void
       end
       def create_inlay_hints_listener(response_builder, dispatcher, document)
-        return unless @enabled
+        return unless @enabled && @i18n_index
 
         InlayHints.new(@i18n_index, response_builder, dispatcher, document)
       end
@@ -115,7 +121,7 @@ module RubyLsp
         ).void
       end
       def create_completion_listener(response_builder, node_context, dispatcher, uri)
-        return unless @enabled
+        return unless @enabled && @i18n_index
 
         Completion.new(@i18n_index, response_builder, dispatcher)
       end

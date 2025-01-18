@@ -26,6 +26,9 @@ module RubyLsp
     class I18nIndex
       extend T::Sig
 
+      sig { returns(String) }
+      attr_reader :language
+
       sig { params(language: String).void }
       def initialize(language:)
         @language = language
