@@ -14,7 +14,7 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
-    logger (1.6.5)
+    logger (1.7.0)
     minitest (5.25.1)
     netrc (0.11.0)
     parallel (1.26.3)
@@ -28,7 +28,7 @@ GEM
     rbi (0.2.0)
       prism (~> 1.0)
       sorbet-runtime (>= 0.5.9204)
-    rbs (3.8.1)
+    rbs (3.9.4)
       logger
     regexp_parser (2.9.2)
     rexml (3.3.6)
@@ -55,10 +55,10 @@ GEM
       rubocop (~> 1.51)
     rubocop-sorbet (0.8.5)
       rubocop (>= 1)
-    ruby-lsp (0.23.5)
+    ruby-lsp (0.24.1)
       language_server-protocol (~> 3.17.0)
       prism (>= 1.2, < 2.0)
-      rbs (>= 3, < 4)
+      rbs (>= 3, < 5)
       sorbet-runtime (>= 0.5.10782)
     ruby-progressbar (1.13.0)
     sorbet (0.5.11535)
@@ -103,7 +103,7 @@ DEPENDENCIES
   rubocop-rake (~> 0.6.0)
   rubocop-shopify (~> 2.15)
   rubocop-sorbet (~> 0.8)
-  ruby-lsp (~> 0.23)
+  ruby-lsp (~> 0.24)
   ruby-lsp-i18n!
   sorbet-static-and-runtime
   tapioca
