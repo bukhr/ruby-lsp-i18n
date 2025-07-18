@@ -93,7 +93,7 @@ module RubyLsp
 
       sig do
         params(
-          response_builder: ResponseBuilders::CollectionResponseBuilder[Interface::InlayHint],
+          response_builder: ResponseBuilders::CollectionResponseBuilder,
           dispatcher: Prism::Dispatcher,
           document: T.any(RubyDocument, ERBDocument),
         ).void
@@ -106,9 +106,7 @@ module RubyLsp
 
       sig do
         override.params(
-          response_builder: RubyLsp::ResponseBuilders::CollectionResponseBuilder[
-            LanguageServer::Protocol::Interface::CompletionItem
-          ],
+          response_builder: RubyLsp::ResponseBuilders::CollectionResponseBuilder,
           node_context: RubyLsp::NodeContext,
           dispatcher: Prism::Dispatcher,
           uri: URI::Generic,
@@ -129,7 +127,7 @@ module RubyLsp
     extend T::Sig
     sig do
       params(
-        response_builder: ResponseBuilders::CollectionResponseBuilder[Interface::InlayHint],
+        response_builder: ResponseBuilders::CollectionResponseBuilder,
         dispatcher: Prism::Dispatcher,
         document: T.any(RubyDocument, ERBDocument),
       ).void
