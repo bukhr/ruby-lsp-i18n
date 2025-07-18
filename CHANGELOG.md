@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.4.0] - 2025-07-18
+
+- Removed sorbet runtime dependency
+- Fix bad use of generics because of RubyLsp sorbet runtime removal
+- Updated RubyLsp to 0.25
+
 ## [0.3.0] - 2025-07-18
 
 - Fix inlay hints patch thanks to [@enmy](https://github.com/enmy)

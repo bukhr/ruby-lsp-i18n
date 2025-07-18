@@ -6,19 +6,9 @@
 module RubyLsp
   module Requests
     module InlayHintsPatch
-      extend T::Sig
-      extend T::Helpers
-
-      requires_ancestor { InlayHints }
-
-      sig do
-        params(
-          document: T.any(RubyDocument, ERBDocument),
-          hints_configuration: RequestConfig,
-          dispatcher: Prism::Dispatcher,
-        ).void
-      end
-      def initialize(document, hints_configuration, dispatcher)
+      # @requires_ancestor: Kernel
+      #: (RubyLsp::GlobalState, RubyDocument | ERBDocument, Prism::Dispatcher) -> void
+      def initialize(global_state, document, dispatcher)
         super
 
         Addon.addons.each do |addon|

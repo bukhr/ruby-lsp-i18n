@@ -7,8 +7,6 @@ require "ruby_lsp/ruby_lsp_i18n/i18n_index"
 module RubyLsp
   module RubyLspI18n
     class I18nIndexTest < Minitest::Test
-      extend T::Sig
-
       def setup
         @db = I18nIndex.new(language: "es")
       end
