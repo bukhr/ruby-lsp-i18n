@@ -1,7 +1,16 @@
 ## [Unreleased]
+
+## [0.3.0] - 2025-07-18
+
+- Fix inlay hints patch thanks to [@enmy](https://github.com/enmy)
+- Publish to rubygems
+
 ## [0.2.4] - 2025-01-13
+
 - Update ruby lsp version to 0.23.0
+
 ## [0.2.3] - 2024-11-29
+
 - Update ruby lsp version to 0.22.0
 
 ## [0.2.2] - 2024-11-18
@@ -14,7 +23,7 @@
 
 ## [0.2.0] - 2024-09-09
 
-- Added enable/disable addon vía .vscode.settings.json file using https://github.com/Shopify/ruby-lsp/pull/2513
+- Added enable/disable addon vía .vscode.settings.json file using <https://github.com/Shopify/ruby-lsp/pull/2513>
 
 ## [0.1.0] - 2024-09-03
 
