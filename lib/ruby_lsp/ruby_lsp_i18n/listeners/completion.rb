@@ -4,16 +4,9 @@
 module RubyLsp
   module RubyLspI18n
     class Completion
-      extend T::Sig
       include Requests::Support::Common
 
-      sig do
-        params(
-          i18n_index: I18nIndex,
-          response_builder: ResponseBuilders::CollectionResponseBuilder[Interface::CompletionItem],
-          dispatcher: Prism::Dispatcher,
-        ).void
-      end
+      #: (I18nIndex, ResponseBuilders::CollectionResponseBuilder, Prism::Dispatcher) -> void
       def initialize(i18n_index, response_builder, dispatcher)
         @i18n_index = i18n_index
         @response_builder = response_builder
@@ -25,7 +18,7 @@ module RubyLsp
         )
       end
 
-      sig { params(node: Prism::CallNode).void }
+      #: (Prism::CallNode) -> void
       def on_call_node_enter(node)
         return unless node.name == :t
 
@@ -42,7 +35,8 @@ module RubyLsp
         return unless key_node.is_a?(Prism::StringNode)
 
         key = key_node.unescaped
-        quote = T.must(key_node.opening_loc).slice
+        opening_location = key_node.opening_loc #: as !nil
+        quote = opening_location.slice
         candidates = @i18n_index.find_prefix(key)
 
         candidates.each do |candidate|

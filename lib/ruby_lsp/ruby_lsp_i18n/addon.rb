@@ -8,24 +8,23 @@ require_relative "listeners/completion"
 require_relative "i18n_index"
 require_relative "../../ruby_lsp_i18n/version"
 
-RubyLsp::Addon.depend_on_ruby_lsp!("~> 0.24.0")
+RubyLsp::Addon.depend_on_ruby_lsp!("~> 0.25.0")
 
 module RubyLsp
   module RubyLspI18n
     GLOB_PATH = "**/config/locales/**/es.yml"
     # This class is the entry point for the addon. It is responsible for activating and deactivating the addon
     class Addon < ::RubyLsp::Addon
-      extend T::Sig
-
-      sig { void }
+      #: -> void
       def initialize
         super
-        @i18n_index = T.let(I18nIndex.new(language: "es"), I18nIndex)
-        @enabled = T.let(true, T::Boolean)
+        @i18n_index = I18nIndex.new(language: "es") #: I18nIndex
+        @enabled = true #: bool
       end
 
       # Performs any activation that needs to happen once when the language server is booted)}
-      sig { override.params(global_state: RubyLsp::GlobalState, message_queue: Thread::Queue).void }
+      # @override
+      #: (RubyLsp::GlobalState, Thread::Queue) -> void
       def activate(global_state, message_queue)
         settings = global_state.settings_for_addon(name) || {}
         @enabled = settings[:enabled] if settings.key?(:enabled)
@@ -60,14 +59,15 @@ module RubyLsp
       end
 
       # Performs any cleanup when shutting down the server, like terminating a subprocess
-      sig { override.void }
+      # @override
+      #: -> void
       def deactivate; end
 
-      sig { params(changes: T::Array[T::Hash[Symbol, T.untyped]]).void }
+      #: (Array[Hash[Symbol, untyped]]) -> void
       def workspace_did_change_watched_files(changes)
         changes.each do |change|
           change = Interface::FileEvent.new(uri: change[:uri], type: change[:type])
-          uri = T.let(change.uri, String)
+          uri = change.uri #: String
 
           next unless uri.end_with?("es.yml")
 
@@ -80,38 +80,27 @@ module RubyLsp
         end
       end
 
-      sig { override.returns(String) }
+      # @override
+      #: -> String
       def version
         RubyLsp::RubyLspI18n::VERSION
       end
 
       # Returns the name of the addon
-      sig { override.returns(String) }
+      # @override
+      #: -> String
       def name
         "Ruby LSP I18n"
       end
 
-      sig do
-        params(
-          response_builder: ResponseBuilders::CollectionResponseBuilder,
-          dispatcher: Prism::Dispatcher,
-          document: T.any(RubyDocument, ERBDocument),
-        ).void
-      end
+      #: (ResponseBuilders::CollectionResponseBuilder, Prism::Dispatcher, (RubyDocument | ERBDocument)) -> void
       def create_inlay_hints_listener(response_builder, dispatcher, document)
         return unless @enabled
 
         InlayHints.new(@i18n_index, response_builder, dispatcher, document)
       end
 
-      sig do
-        override.params(
-          response_builder: RubyLsp::ResponseBuilders::CollectionResponseBuilder,
-          node_context: RubyLsp::NodeContext,
-          dispatcher: Prism::Dispatcher,
-          uri: URI::Generic,
-        ).void
-      end
+      #: (RubyLsp::ResponseBuilders::CollectionResponseBuilder, RubyLsp::NodeContext, Prism::Dispatcher, URI::Generic) -> void
       def create_completion_listener(response_builder, node_context, dispatcher, uri)
         return unless @enabled
 
@@ -124,14 +113,7 @@ end
 # Patch the InlayHints request to support addons
 module RubyLsp
   class Addon
-    extend T::Sig
-    sig do
-      params(
-        response_builder: ResponseBuilders::CollectionResponseBuilder,
-        dispatcher: Prism::Dispatcher,
-        document: T.any(RubyDocument, ERBDocument),
-      ).void
-    end
+    #: (ResponseBuilders::CollectionResponseBuilder, Prism::Dispatcher, (RubyDocument | ERBDocument)) -> void
     def create_inlay_hints_listener(response_builder, dispatcher, document)
     end
   end

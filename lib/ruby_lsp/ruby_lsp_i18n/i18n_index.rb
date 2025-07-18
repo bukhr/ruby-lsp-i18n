@@ -8,15 +8,13 @@ module RubyLsp
     # to their values and the files they are defined in.
 
     class Entry
-      extend T::Sig
-
-      sig { returns(String) }
+      #: String
       attr_reader :value
 
-      sig { returns(String) }
+      #: String
       attr_reader :file
 
-      sig { params(value: String, file: String).void }
+      #: (String, String) -> void
       def initialize(value, file)
         @value = value
         @file = file
@@ -24,59 +22,58 @@ module RubyLsp
     end
 
     class I18nIndex
-      extend T::Sig
-
-      sig { params(language: String).void }
+      #: (language: String) -> void
       def initialize(language:)
         @language = language
-        @data = T.let({}, T::Hash[String, T::Array[Entry]])
+        @data = {} #: Hash[String, Array[Entry]]
 
-        @file_keys = T.let(
-          Hash.new do |hash, key|
-            hash[key] = []
-          end,
-          T::Hash[String, T::Array[String]],
-        )
+        @file_keys = Hash.new do |hash, key|
+          hash[key] = []
+        end #: Hash[String, Array[String]]
 
-        @keys_tree = T.let(RubyLsp::RubyLspI18n::PrefixTree.new, RubyLsp::RubyLspI18n::PrefixTree[String])
+        @keys_tree = RubyLsp::RubyLspI18n::PrefixTree.new #: RubyLsp::RubyLspI18n::PrefixTree[String]
       end
 
-      sig { params(key: String, value: String, file: String).void }
+      #: (String key, String value, String file) -> void
       def add(key, value, file)
         entry = Entry.new(value, file)
         @data[key] ||= []
-        T.must(@data[key]) << entry
-        T.must(@file_keys[file]) << key
+        data_key = @data[key] #: as !nil
+        data_key << entry
+        data_file = @file_keys[file] #: as !nil
+        data_file << key
         @keys_tree.insert(key, key)
       end
 
-      sig { params(key: String, file: String).void }
+      #: (String key, String file) -> void
       def remove(key, file)
         return unless @data[key]
 
-        T.must(@data[key]).delete_if { |v| v.file == file }
-        T.must(@file_keys[file]).delete(key)
+        data_key = @data[key] #: as !nil
+        data_key.delete_if { |v| v.file == file }
+        data_file = @file_keys[file] #: as !nil
+        data_file.delete(key)
         @keys_tree.delete(key)
       end
 
-      sig { params(key: String).returns(T::Array[RubyLsp::RubyLspI18n::Entry]) }
+      #: (String key) -> Array[RubyLsp::RubyLspI18n::Entry]
       def find(key)
         datum = @data.dig(key)
         datum.nil? ? [] : datum
       end
 
-      sig { params(prefix: String).returns(T::Array[String]) }
+      #: (String prefix) -> Array[String]
       def find_prefix(prefix)
         @keys_tree.search(prefix)
       end
 
-      sig { params(key: String, value: String, file: String).void }
+      #: (String key, String value, String file) -> void
       def update(key, value, file)
         remove(key, file)
         add(key, value, file)
       end
 
-      sig { params(path: String).void }
+      #: (String path) -> void
       def sync_file(path)
         # Clean entries from the file
         current_keys = get_keys_from_file(path)
@@ -108,12 +105,12 @@ module RubyLsp
 
       private
 
-      sig { params(file: String).returns(T::Array[String]) }
+      #: (String file) -> Array[String]
       def get_keys_from_file(file)
-        T.must(@file_keys[file])
+        @file_keys[file] #: as !nil
       end
 
-      sig { params(translations: T::Hash[String, T.untyped], file: String, prefix: T.nilable(String)).void }
+      #: (Hash[String, untyped] translations, String file, ?String? prefix) -> void
       def process_translations(translations, file, prefix = nil)
         translations.each do |key, value|
           full_key = prefix ? "#{prefix}.#{key}" : key

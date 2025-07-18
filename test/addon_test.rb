@@ -52,7 +52,7 @@ class I18nAddonTest < Minitest::Test
       result = server.pop_response.response
       inlay_hint = result.first
 
-      tooltip_content = "**Translations (es)**\n" + "- [test/fixtures/config/locales/es.yml](file://#{Dir.pwd}/test/fixtures/config/locales/es.yml): Test Addon\n" # rubocop:disable Layout/LineLength
+      tooltip_content = "**Translations (es)**\n" + "- [test/fixtures/config/locales/es.yml](file://#{Dir.pwd}/test/fixtures/config/locales/es.yml): Test Addon\n"
       assert_equal("Test Addon", inlay_hint.label)
 
       assert_equal(inlay_hint.tooltip.kind, "markdown")
@@ -85,7 +85,7 @@ class I18nAddonTest < Minitest::Test
       result = server.pop_response.response
       inlay_hint = result.first
 
-      tooltip_content = "**Translations (es)**\n" + "- [test/fixtures/config/locales/es.yml](file://#{Dir.pwd}/test/fixtures/config/locales/es.yml): Test Addon\n" # rubocop:disable Layout/LineLength
+      tooltip_content = "**Translations (es)**\n" + "- [test/fixtures/config/locales/es.yml](file://#{Dir.pwd}/test/fixtures/config/locales/es.yml): Test Addon\n"
       assert_equal("Test Addon", inlay_hint.label)
 
       assert_equal(inlay_hint.tooltip.kind, "markdown")

@@ -4,21 +4,13 @@
 module RubyLsp
   module RubyLspI18n
     class InlayHints
-      extend T::Sig
       include Requests::Support::Common
 
-      sig do
-        params(
-          i18n_index: I18nIndex,
-          response_builder: ResponseBuilders::CollectionResponseBuilder[Interface::InlayHint],
-          dispatcher: Prism::Dispatcher,
-          document: T.any(RubyDocument, ERBDocument),
-        ).void
-      end
+      #: (I18nIndex, ResponseBuilders::CollectionResponseBuilder, Prism::Dispatcher, (RubyDocument | ERBDocument)) -> void
       def initialize(i18n_index, response_builder, dispatcher, document)
-        absolute_path = T.must(document.uri.path)
-        @absolute_path = T.let(absolute_path, String)
-        @path = T.let(Pathname(absolute_path).relative_path_from(Dir.pwd), Pathname)
+        absolute_path = document.uri.path
+        @absolute_path = absolute_path #: String
+        @path = Pathname(absolute_path).relative_path_from(Dir.pwd) #: Pathname
         @i18n_index = i18n_index
         @response_builder = response_builder
 
@@ -28,7 +20,7 @@ module RubyLsp
         )
       end
 
-      sig { params(node: Prism::CallNode).void }
+      #: (Prism::CallNode) -> void
       def on_call_node_enter(node)
         return unless node.name == :t
 
@@ -87,13 +79,13 @@ module RubyLsp
 
       private
 
-      sig { params(path: String).returns(String) }
+      #: (String path) -> String
       def create_file_uri(path)
         base_uri = "file://#{Dir.pwd}/"
         URI.join(base_uri, path).to_s
       end
 
-      sig { params(arguments: Prism::ArgumentsNode).returns(T::Boolean) }
+      #: (Prism::ArgumentsNode arguments) -> bool
       def i18n_arguments_has_scope_argument(arguments)
         arguments = arguments.arguments
         return false if arguments.size <= 1
