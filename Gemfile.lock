@@ -31,8 +31,7 @@ GEM
     rbs (3.9.4)
       logger
     regexp_parser (2.9.2)
-    rexml (3.3.6)
-      strscan
+    rexml (3.4.1)
     rubocop (1.65.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -73,7 +72,6 @@ GEM
       prism (>= 0.28.0)
       sorbet-static-and-runtime (>= 0.5.10187)
       thor (>= 0.19.2)
-    strscan (3.1.0)
     tapioca (0.16.2)
       bundler (>= 2.2.25)
       netrc (>= 0.11.0)
