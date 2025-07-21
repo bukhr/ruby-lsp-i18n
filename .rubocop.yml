@@ -1,3 +1,7 @@
+plugins:
+  - rubocop-minitest
+  - rubocop-rake
+
 inherit_gem:
   rubocop-shopify: rubocop.yml
 

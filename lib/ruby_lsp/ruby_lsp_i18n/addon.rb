@@ -100,7 +100,8 @@ module RubyLsp
         InlayHints.new(@i18n_index, response_builder, dispatcher, document)
       end
 
-      #: (RubyLsp::ResponseBuilders::CollectionResponseBuilder, RubyLsp::NodeContext, Prism::Dispatcher, URI::Generic) -> void
+      # @override
+      #: (ResponseBuilders::CollectionResponseBuilder, RubyLsp::NodeContext, Prism::Dispatcher, URI::Generic) -> void
       def create_completion_listener(response_builder, node_context, dispatcher, uri)
         return unless @enabled
 

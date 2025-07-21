@@ -116,7 +116,7 @@ class I18nAddonTest < Minitest::Test
         },
       })
       result = server.pop_response.response
-      assert_equal([], result)
+      assert_empty(result)
     end
   end
 
