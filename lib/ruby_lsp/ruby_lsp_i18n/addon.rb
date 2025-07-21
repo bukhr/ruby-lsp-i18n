@@ -8,7 +8,7 @@ require_relative "listeners/completion"
 require_relative "i18n_index"
 require_relative "../../ruby_lsp_i18n/version"
 
-RubyLsp::Addon.depend_on_ruby_lsp!("~> 0.25.0")
+RubyLsp::Addon.depend_on_ruby_lsp!("~> 0.26.0")
 
 module RubyLsp
   module RubyLspI18n

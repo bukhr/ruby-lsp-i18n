@@ -103,7 +103,7 @@ DEPENDENCIES
   rubocop-rake (~> 0.6.0)
   rubocop-shopify (~> 2.15)
   rubocop-sorbet (~> 0.8)
-  ruby-lsp (~> 0.25)
+  ruby-lsp (~> 0.26)
   ruby-lsp-i18n!
   sorbet-static
   tapioca
