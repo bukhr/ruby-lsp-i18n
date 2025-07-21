@@ -85,7 +85,7 @@ module RubyLsp
 
         # Load translations only if the current yaml is valid
         begin
-          translations = YAML.load_file(path, aliases: true)
+          translations = YAML.load_file(path, aliases: true, permitted_classes: [Symbol, Date])
         rescue Psych::SyntaxError
           return
         end
