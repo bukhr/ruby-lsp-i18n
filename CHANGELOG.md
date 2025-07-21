@@ -1,4 +1,8 @@
 ## [Unreleased]
+## [0.4.2] - 2025-07-21
+
+- Allow to load Symbol and Date from yml files
+
 ## [0.4.1] - 2025-07-21
 
 - Updated RubyLsp to 0.25
