@@ -2,6 +2,6 @@
 
 module RubyLsp
   module RubyLspI18n
-    VERSION = "0.4.1"
+    VERSION = "0.4.2"
   end
 end
