@@ -6,6 +6,7 @@ require "test_helper"
 class I18nAddonTest < Minitest::Test
   include RubyLsp::TestHelper
 
+  #: () -> untyped
   def setup
     @uri = URI("file:///foo.rb")
     yaml = <<~YAML
@@ -23,10 +24,12 @@ class I18nAddonTest < Minitest::Test
     end
   end
 
+  #: () -> untyped
   def teardown
     File.delete("test/fixtures/config/locales/es.yml")
   end
 
+  #: () -> untyped
   def test_addon_inlay_hint
     source = <<~RUBY
       I18n.t("test.addon")
@@ -60,6 +63,7 @@ class I18nAddonTest < Minitest::Test
     end
   end
 
+  #: () -> untyped
   def test_addon_inlay_hint_multiple_parameters
     source = <<~RUBY
       I18n.t("test.addon", bar: "bar")
@@ -93,6 +97,7 @@ class I18nAddonTest < Minitest::Test
     end
   end
 
+  #: () -> untyped
   def test_addon_inlay_hint_scope_parameter
     source = <<~RUBY
       I18n.t("addon", scope: "test")
@@ -120,6 +125,7 @@ class I18nAddonTest < Minitest::Test
     end
   end
 
+  #: () -> untyped
   def test_addon_inlay_hint_translation_missing
     source = <<~RUBY
       I18n.t("missing.key")
@@ -150,6 +156,7 @@ class I18nAddonTest < Minitest::Test
     end
   end
 
+  #: () -> untyped
   def test_addon_autocomplete
     source = <<~RUBY
       I18n.t("test")

@@ -1,9 +1,14 @@
 plugins:
   - rubocop-minitest
   - rubocop-rake
+  - rubocop-sorbet
 
 inherit_gem:
   rubocop-shopify: rubocop.yml
+
+AllCops:
+  Include:
+    - "sorbet/rbi/shims/**/*.rbi"
 
 Style/StringLiterals:
   Enabled: true
@@ -18,3 +23,25 @@ Layout/LineLength:
 
 Layout/LeadingCommentSpace:
   AllowRBSInlineAnnotation: true
+
+Sorbet/EnforceSignatures:
+  Style: rbs
+  Enabled: true
+
+Sorbet/ForbidTAbsurd:
+  Enabled: true
+
+Sorbet/ForbidTBind:
+  Enabled: true
+
+Sorbet/ForbidTCast:
+  Enabled: true
+
+Sorbet/ForbidTLet:
+  Enabled: true
+
+Sorbet/ForbidTMust:
+  Enabled: true
+
+Sorbet/ForbidTTypeAlias:
+  Enabled: true
